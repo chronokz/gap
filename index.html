@@ -12,7 +12,6 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/index.css">
 
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -36,38 +35,98 @@
 	  </div>
 
 
-      <ul class="top_panel">
-          <li><img src="" alt=""><a href="">Corporate Broshure</a></li>
-          <li><img src="" alt=""><a href="">Sitemap</a></li>
-          <li>
-              <form action="">
-                  <input type="text" placeholder="Insert text for search...">
-                  <input value="Search" type="submit">
-              </form>
-          </li>
-      </ul>
+	  <div class="border_panel">
+		  <ul class="top_panel">
+			  <li><a href=""><img src="img/broshure.png" alt="">Corporate Broshure</a></li>
+			  <li><a href=""><img src="img/sitemap.png" alt="">Sitemap</a></li>
+			  <li class="search">
+				  <form action="">
+					  <input type="text" placeholder="Insert text for search..." class="input_text">
+					  <input value="Search" type="submit"  class="input_submit">
+				  </form>
+			  </li>
+		  </ul>
+	  </div>
 
   </header>
-  <div role="main" id="splash">
+	<div id="splash" role="main">
+		<div class="slides_container">
+			<div class="slide1">
+				<aside>
+					<h2>Gapuma is fast becoming a major supplier of quality Lubrication and Oil allied products in the international market.</h2>
+					<p><a href="#a">Find out more >></a></p>
+				</aside>
+			</div>
+			<div class="slide2">
+				<aside>
+					<h2>Gapuma is fast becoming a major supplier of quality Lubrication and Oil allied products in the international market.</h2>
+					<p><a href="#a">Find out more >></a></p>
+				</aside>
+			</div>
+			<div class="slide3">
+				<aside>
+					<h2>Gapuma is fast becoming a major supplier of quality Lubrication and Oil allied products in the international market.</h2>
+					<p><a href="#a">Find out more >></a></p>
+				</aside>
+			</div>
+			<div class="slide4">
+				<aside>
+					<h2>Gapuma is fast becoming a major supplier of quality Lubrication and Oil allied products in the international market.</h2>
+					<p><a href="#a">Find out more >></a></p>
+				</aside>
+			</div>
+			<div class="slide5">
+				<aside>
+					<h2>Gapuma is fast becoming a major supplier of quality Lubrication and Oil allied products in the international market.</h2>
+					<p><a href="#a">Find out more >></a></p>
+				</aside>
+			</div>
+		</div>
+		<ul class="pagination">
+			<li><a href="#1"><img src="img/back1.jpg" alt="">Chemicals</a></li>
+			<li><a href="#2"><img src="img/back2.jpg" alt="">Lubricants</a></li>
+			<li><a href="#3"><img src="img/back3.jpg" alt="">Steel</a></li>
+			<li><a href="#4"><img src="img/back4.jpg" alt="">Ethanol</a></li>
+			<li><a href="#5"><img src="img/back5.jpg" alt="">Fertilizer</a></li>
 
-  </div>
+		</ul>
+	</div>
+
   <footer>
-
+	  <div class="footer_right">
+		  Made by
+		  <a href="http://ibecsystems.com" target="_blank">
+			  iBEC Systems
+		  </a>
+	  </div>
+	  <div class="footer_left">
+		  <div class="footer_menu">
+			  <a href="#a">Our business</a>
+			  | <a href="#a">Membership</a>
+			  | <a href="#a">People</a>
+			  | <a href="#a">Terms and conditions</a>
+			  | <a href="#a">MSDS</a>
+		  </div>
+		  © 1996-2012 Gapuma Group</div>
   </footer>
 </div>
 
   <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script-->
-  <script src="/js/jquery.min.js"></script>
-  <!--script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script-->
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="js/libs/jquery.slides.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#splash').slides({
+			generateNextPrev: false,
+			play: 2500,
+			generatePagination: false
+		});
+	});
+</script>
+
 
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
 
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
 </body>
 </html>

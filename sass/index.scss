@@ -1,29 +1,117 @@
 @import "compass/reset";
 @import "compass/css3";
 
+@mixin border-transparent{
+   border: 1px solid rgba(255,255,255,0.3);
+}
+
 $site_width: 1100px;
+$splash_height: 575px;
+$font_family: Arial, Tahoma, sans-serif;
 
 body{
 	color:#fff;
-	font:12px Tahoma;
+	font:11px $font_family;
 }
 
 a{
 	color:#ccc;
 	text-decoration: none;
 	outline:none;
+	&:hover{
+		color:#fff;
+	}
+}
+
+header{
+	position:absolute;
+	z-index:10;
+	width:$site_width;
 }
 
 #site{
-    width:1100px;
+    width:$site_width;
     margin:0 auto;
 }
 
 /*splash*/
 #splash{
-	background:url(../img/back1.jpg);
-	height:575px;
-	width:1100px;
+    clear:both;
+	/*background:url(../img/back1.jpg);*/
+	height:$splash_height;
+	width:$site_width;
+}
+
+#splash .slides_container {
+	width:$site_width;
+	height:$splash_height;
+	display:none;
+	div {
+		height:$splash_height;
+		width:$site_width;
+		display:block;
+	}
+	aside{
+        margin-top:108px;
+        margin-left:587px;
+        width:453px;
+        @include text-shadow(0 0 1px rgba(#000,1));
+	}
+	h2{
+		font-size:30px;
+		line-height:40px;
+		border-bottom:2px solid #fff;
+		padding-bottom:10px;
+		margin-bottom:10px;
+	}
+	a{
+		color:#fff;
+		&:hover{
+			text-decoration:underline;
+		}
+	}
+}
+
+
+
+#splash .slide1{background:url(../img/back1.jpg)}
+#splash .slide2{background:url(../img/back2.jpg)}
+#splash .slide3{background:url(../img/back3.jpg)}
+#splash .slide4{background:url(../img/back4.jpg)}
+#splash .slide5{background:url(../img/back5.jpg)}
+
+#splash .pagination{
+    margin-top:-165px;
+    position:relative;
+    z-index:10;
+    margin-left:50px;
+	li{
+	    float:left;
+        height:118px;
+        width:196px;
+        background:url(../img/items.png);
+        @include border-radius(10px);
+        font-size:14px;
+        margin:0 1px;
+        @include border-transparent();
+        @include single-box-shadow();
+        &.current{
+        	background:url(../img/items_current.png);
+        }
+        a{
+        	padding:15px 19px;
+            display:block;
+        }
+    }
+
+    img{
+        width:158px;
+        height:62px;
+    }
+}
+
+hr {
+	background:#efefef;
 }
 
 .top_line{
@@ -32,35 +120,70 @@ a{
 	height:72px;
 	width: $site_width;
 	position:absolute;
-	z-index:0;
+	z-index:6;
 
 }
 
-.top_panel{
-    background: url(../img/top_panel.png) top left repeat-x;
-    @include single-box-shadow();
-    list-style:none;
-    padding:0;
-    margin:0;
+.border_panel{
+	@include border-transparent();
+	@include single-box-shadow();
+	border-top:0;
     height:30px;
     width:410px;
     float:right;
+    z-index:7;
     position:relative;
+    right:50px;
+}
+.top_panel{
+    background: url(../img/top_panel.png) bottom left repeat-x;
+    list-style:none;
+    padding:5px 0;
+    margin:0;
+    height:20px;
 
     li{
     	margin:0;
-        padding:0;
+        padding:0 9px;
         float:left;
+        font-size:11px;
+        line-height:20px;
+        @include text-shadow(2px 2px 1px rgba(#000,1));
+        background:url(../img/top_panel_line.gif) right center repeat-y;
+    }
+    img{
+        vertical-align:middle;
     }
 }
 
+li.search{
+    background:none;
+	.input_text{
+    	height:17px;
+        border:1px solid #000;
+        font:11px $font_family;
+        vertical-align:middle;
+        width:132px;
+        @include single-box-shadow(#000, 0, 0, 3px, 0, true);
+	}
+	.input_submit{
+	    @include border-transparent();
+        background:url(../img/search_button.png) center center repeat-x;
+    	height:17px;
+        color:#fff;
+        vertical-align:middle;
+        font:11px $font_family;
+	}
+}
+
 .main_menu{
-    @include border-radius(5px);
+    @include single-box-shadow();
+    @include border-radius(8px);
 	position:relative;
-	z-index:1;
+	z-index:7;
 	float:left;
 	margin-left:50px;
-	margin-top:5px;
+	margin-top:6px;
 
    img{
        vertical-align:middle;
@@ -68,10 +191,12 @@ a{
    }
 
 	ul{
+	    border:1px solid #181248;
+	    border-top:0;
         @include border-bottom-radius(8px);
-        @include opacity(0.8);
+        @include opacity(0.9);
         @include text-shadow(2px 2px 0px rgba(#000,1));
-        background: #20195a;
+        background: #1b1459;
         font-size: 14px;
         padding:20px;
 	}
@@ -83,3 +208,32 @@ a{
 	}
 }
 
+footer{
+	background:#2f2f2f;
+ 	padding:25px 80px;
+
+ 	.footer_right{
+  	    float:right;
+  	    color:#666;
+  	    a{
+  	        color:#666;
+  	       text-decoration:underline;
+  	    }
+ 	}
+
+	.footer_left{
+		color:#999;
+		line-height:16px;
+		.footer_menu{
+			font-weight:bold;
+			line-height:normal;
+			color:#fff;
+			a{
+				color:#fff;
+				&:hover{
+					text-decoration:underline;
+				}
+			}
+		}
+	}
+}
